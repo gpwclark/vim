@@ -41,6 +41,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'zah/nim.vim'
 Plugin 'luochen1990/rainbow'
 Plugin 'junegunn/goyo.vim'
+Plugin 'editorconfig/editorconfig-vim'
 "Plugin 'paredit.vim'
 "Plugin 'flowtype/vim-flow'
 " AFTER ADDITION OF PLUGIN RUN -

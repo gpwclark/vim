@@ -105,6 +105,10 @@ set autoindent
 set noexpandtab
 set shiftwidth=4
 set list
+
+" honor editorconfigs!
+let g:EditorConfig_core_mode = 'external_command'
+
 " show leading tabs
 set listchars=tab:>·,trail:- "
 " show leading spaces
