@@ -196,9 +196,9 @@ let g:ctrlp_arg_map = 1
 " CtrlP -> files matched are ignored when expanding wildcards
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*.,*/.DS_Store
 
-" CtrlP -> use Ag for searching instead of VimScript
+" CtrlP -> use rg for searching instead of VimScript
 " (might not woRk with ctrlp_show_hidden and ctrlp_custom_ignore)
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'rg %s -l --nocolor -g ""'
 
 " CtrlP -> diretories to ignore when fuzzy finding
 " CtrlP -> directories to ignore when fuzzy finding
@@ -208,8 +208,8 @@ let g:ctrlp_custom_ignore = '\v[\/]((node_modules|target|doc)|\.(git|svn|grunt|s
 
 "" unused settings {{{
 
-" Ack (uses Ag behind the scenes)
-"let g:ackprg = 'ag --nogroup --nocolor --column'
+" Ack (uses rg behind the scenes)
+"let g:ackprg = 'rg --nogroup --nocolor --column'
 "
 "" Airline (status line)
 "let g:airline_powerline_fonts = 1
@@ -423,6 +423,10 @@ fun! JumpToDef()
     exe "norm! \<C-]>"
   endif
 endf
+
+" LISP {{{
+set iskeyword+=-
+" }}}
 
 
 " clipboard fun {{{
