@@ -5,7 +5,6 @@ set t_Co=256
 
 colorscheme evening
 set background=dark
-
 "" Plugins {{{
 set nocompatible
 filetype plugin indent on
@@ -38,18 +37,22 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'leshill/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'mileszs/ack.vim'
-Plugin 'bling/vim-airline'
-
 "Plugin 'flowtype/vim-flow'
 " AFTER ADDITION OF PLUGIN RUN -
 "   :source ~/.vimrc
 "   :PluginInstall
 
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 "" }}}
+
+"" ColorScheme {{{
+colorscheme elflord
+set background=dark
+"" }}}
+
 
 " Default configuration file for Vim
 " $Header: /var/cvsroot/gentoo-x86/app-editors/vim-core/files/vimrc-r4,v 1.3 2010/04/15 19:30:32 darkside Exp $
