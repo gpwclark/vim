@@ -29,12 +29,19 @@ Plugin 'mtth/scratch.vim'
 Plugin 'dbakker/vim-projectroot'
 Plugin 'LucHermitte/lh-vim-lib'
 Plugin 'LucHermitte/local_vimrc'
-Plugin 'dansomething/vim-eclim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'leshill/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'morhetz/gruvbox'
+Plugin 'mileszs/ack.vim'
+Plugin 'bling/vim-airline'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'zah/nim.vim'
+Plugin 'luochen1990/rainbow'
+Plugin 'junegunn/goyo.vim'
+"Plugin 'paredit.vim'
 "Plugin 'flowtype/vim-flow'
 " AFTER ADDITION OF PLUGIN RUN -
 "   :source ~/.vimrc
@@ -246,3 +253,4 @@ endif " has("autocmd")
 source ~/.vimrc.local
 " endif
 " }}}
+set clipboard+=ideaput

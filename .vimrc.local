@@ -8,7 +8,7 @@ augroup vimrc
 augroup END
   set foldnestmax=10    "deepest fold is 10 lvls
   set nofoldenable      "dont fold by default
-  set foldlevel=1       "my default for now
+"set foldlevel=1       "my default for now
 
   set autochdir
   set fileformats=unix,dos,mac
@@ -23,7 +23,6 @@ augroup END
   set showmatch
   set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
-  set expandtab
   set ignorecase
   set smartcase
 " }}}
@@ -44,7 +43,6 @@ map <leader>gh :CommandTFlush<cr>\|:CommandT ~/development/hillebrand<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT ~/development/md5_repos/mmcommunity<cr>
 map <leader>gD :CommandTFlush<cr>\|:CommandT ~/development/md5_repos/md5<cr>
 map <leader>yy :.w !xsel -b<cr>
-
 " }}}
 
 " Settings {{{
@@ -101,16 +99,20 @@ set backspace=indent,eol,start
 " Convert tabs to spaces
 "set expandtab
 
-" Set tab size in spaces (this is for manual indenting)
-"set tabstop=4
-"set softtabstop=4
-" The number of spaces inserted for a tab (used for auto indenting)
-
-" switching to tabs instead of spaces
+" switching to tabs instead of spaces OH WHITESPACE
+set tabstop=4
 set autoindent
 set noexpandtab
-set tabstop=4
 set shiftwidth=4
+set list
+" show leading tabs
+set listchars=tab:>·,trail:- "
+" show leading spaces
+hi Conceal guibg=NONE ctermbg=NONE ctermfg=DarkGrey
+autocmd BufWinEnter * setl conceallevel=2 concealcursor=nv
+autocmd BufWinEnter * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
+autocmd BufReadPre * setl conceallevel=2 concealcursor=nv
+autocmd BufReadPre * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
 
 " Turn on line numbers
 set number
@@ -335,7 +337,7 @@ autocmd BufWritePre * call StripTrailingWhitespace()
 " file formats
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd Filetype markdown setlocal wrap linebreak nolist textwidth=0 wrapmargin=0 " http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
-autocmd FileType sh,cucumber,ruby,yaml,zsh,vim setlocal shiftwidth=4 tabstop=4 expandtab
+"autocmd FileType sh,cucumber,ruby,yaml,zsh,vim setlocal shiftwidth=4 tabstop=4 expandtab
 
 " specify syntax highlighting for specific files
 autocmd Bufread,BufNewFile *.spv set filetype=php
@@ -377,12 +379,8 @@ endfunction
 autocmd BufRead * normal zM
 
 " Rainbow parenthesis always on!
-if exists(':RainbowParenthesesToggle')
-  autocmd VimEnter * RainbowParenthesesToggle
-  autocmd Syntax * RainbowParenthesesLoadRound
-  autocmd Syntax * RainbowParenthesesLoadSquare
-  autocmd Syntax * RainbowParenthesesLoadBraces
-endif
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle"
+
 "
 " Reset spelling colours when reading a new buffer
 " This works around an issue where the colorscheme is changed by .local.vimrc
@@ -429,6 +427,8 @@ endf
 " Jump to tag
 nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
+map <leader>b :call JumpToDef()<cr>
+map <leader>B <esc>:call JumpToDef()<cr>i
 " }}}
 
 " Java EclimD plugins {{{
