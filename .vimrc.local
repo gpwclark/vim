@@ -417,6 +417,20 @@ let g:javascript_plugin_flow = 1
 imap <C-c> <CR><Esc>O
 " }}}
 
+" NIM {{{
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
+" }}}
+
 " Java EclimD plugins {{{
 nnoremap <silent> <buffer> <leader>jds :JavaDocSearch -x declarations<cr>
 nnoremap <silent> <buffer> <leader>ji :JavaImport<cr>
