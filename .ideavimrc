@@ -1,0 +1,235 @@
+" Emulated vim plugins {{{
+set vim-surround
+" }}}
+" Fold Settings {{{
+  " vim: set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :
+  " folding settings
+ set foldmethod=indent "fold based on indent
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=indent | endif
+augroup END
+  set foldnestmax=10    "deepest fold is 10 lvls
+  set nofoldenable      "dont fold by default
+"set foldlevel=1       "my default for now
+
+  set autochdir
+  set fileformats=unix,dos,mac
+  set hidden
+  set cursorcolumn
+  set cursorline
+  set laststatus=2
+  set report=0
+  set ruler
+  set showcmd
+  set showmatch
+  set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+
+  set ignorecase
+  set smartcase
+" }}}
+
+" DAS magic {{{
+" Map ,e and ,v to open files in same dir as current file.
+let mapleader=" "
+"
+" Settings {{{
+" Switch syntax highlighting on, when the terminal has colors
+if &t_Co > 2 || has("gui_running")
+  syntax on
+endif
+
+"" Set the dictionary
+set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+
+" No backup files
+set nobackup
+
+" No write backup
+set nowritebackup
+
+" No swap file
+set noswapfile
+
+" Command history
+set history=100
+
+" Always show cursor
+set ruler
+
+" Show incomplete commands
+set showcmd
+
+" Incremental searching (search as you type)
+set incsearch
+
+" Highlight search matches
+set hlsearch
+
+" Ignore case in search
+set smartcase
+
+" Make sure any searches /searchPhrase doesn't need the \c escape character
+set ignorecase
+
+" A buffer is marked as ‘hidden’ if it has unsaved changes, and it is not currently loaded in a window
+" if you try and quit Vim while there are hidden buffers, you will raise an error:
+" E162: No write since last change for buffer “a.txt”
+set hidden
+
+" Turn word wrap off
+set wrap
+"set nowrap
+
+" Allow backspace to delete end of line, indent and start of line characters
+set backspace=indent,eol,start
+
+" Convert tabs to spaces
+"set expandtab
+
+" switching to tabs instead of spaces OH WHITESPACE
+set tabstop=4
+set autoindent
+set noexpandtab
+set shiftwidth=4
+set list
+
+" honor editorconfigs!
+let g:EditorConfig_core_mode = 'external_command'
+
+" show leading tabs
+set listchars=tab:>·,trail:- "
+" show leading spaces
+hi Conceal guibg=NONE ctermbg=NONE ctermfg=DarkGrey
+autocmd BufWinEnter * setl conceallevel=2 concealcursor=nv
+autocmd BufWinEnter * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
+autocmd BufReadPre * setl conceallevel=2 concealcursor=nv
+autocmd BufReadPre * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
+
+" Turn on line numbers
+set number
+
+" Turn on relative line numbers
+set relativenumber
+
+" jk is the new escape
+imap jk <Esc>
+
+
+" Get rid of the delay when pressing O (for example)
+" http://stackoverflow.com/questions/2158516/vim-delay-before-o-opens-a-new-line
+set timeout timeoutlen=1000 ttimeoutlen=100
+
+" Always show status bar
+set laststatus=2
+
+" Set the status line to something useful
+set statusline=%f\ %=L:%l/%L\ %c\ (%p%%)
+
+" Hide the toolbar
+set guioptions-=T
+
+" UTF encoding
+set encoding=utf-8
+
+" Autoload files that have changed outside of vim
+set autoread
+
+" Use system clipboard
+" http://stackoverflow.com/questions/8134647/copy-and-paste-in-vim-via-keyboard-between-different-mac-terminals
+set clipboard=unnamed
+
+" Don't show intro
+set shortmess+=I
+
+" Better splits (new windows appear below and to the right)
+set splitbelow
+set splitright
+
+" Highlight the current line
+set cursorline
+
+" Ensure Vim doesn't beep at you every time you make a mistype
+set visualbell
+
+" Visual autocomplete for command menu (e.g. :e ~/path/to/file)
+set wildmenu
+
+" redraw only when we need to (i.e. don't redraw when executing a macro)
+set lazyredraw
+
+" highlight a matching [{()}] when cursor is placed on start/end character
+set showmatch
+
+" Set built-in file system explorer to use layout similar to the NERDTree plugin
+let g:netrw_liststyle=3
+
+" Always highlight column 80 so it's easier to see where
+" cutoff appears on longer screens
+autocmd BufWinEnter * highlight ColorColumn ctermbg=darkred
+set colorcolumn=80
+" }}}
+
+"" Make splitting Vim windows easier
+map <leader>; <C-W>s
+map <leader>` <C-W>v
+
+
+" Close all folds when opening a new buffer
+"autocmd BufRead * setlocal foldmethod=marker
+autocmd BufRead * normal zM
+
+"line splitting {{{
+imap <C-c> <CR><Esc>O
+" }}}
+
+" intellij specific vim bindings {{{
+" Refactorings
+vmap T :action Refactorings.QuickListPopupAction<cr>
+nmap <leader>rr :action RenameElement<cr>
+nmap <leader>rI :action OptimizeImports<cr>
+" Inspection
+nmap <leader>rc :action InspectCode<cr>
+
+" g = go, go tool window, go declartion, go implementation
+nmap <leader>gt :action ActivateTODOToolWindow<cr>
+nmap <leader>gd :action GotoDeclaration<cr>
+nmap <leader>gi :action GotoImplementation<cr>
+
+" f = find
+nmap <leader>fu :action FindUsages<cr>
+
+" e = error
+nmap <leader>en :action GotoNextError<cr>
+nmap <leader>ep :action GotoPreviousError<cr>
+
+" d = doc
+nmap <leader>dq :action GuiDesigner.QuickJavadoc<cr>
+nmap <leader>de :action ExternalJavaDoc<cr>
+
+" h = hierarchy
+nmap <leader>ht :action TypeHierarchy<cr>
+nmap <leader>htp :action TypeHierarchyPopupMenu<cr>
+nmap <leader>hc :action CallHierarchy<cr>
+nmap <leader>hcp :action CallHierarchyPopupMenu<cr>
+nmap <leader>hm :action MethodHierarchy<cr>
+nmap <leader>hmp :action MethodHierarchyPopupMenu<cr>
+
+" m = move
+nmap <leader>ml :action MoveElementLeft<cr>
+nmap <leader>mr :action MoveElementRight<cr>
+
+" w = window
+nmap <leader>wh :action HideAllWindows<cr>
+nmap <leader>ws :action MoveEditorToOppositeTabGroup<cr>
+
+" t = test
+nmap <leader>td :action Debug<cr>
+nmap <leader>tr :action Run<cr>
+nmap <leader>ts :action RunDashboard.Stop<cr>
+
+" c = cursive
+nmap <leader>cl :cursive.repl.actions/load-file<cr>
+
+" }}}
+set clipboard+=ideaput

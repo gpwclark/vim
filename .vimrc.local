@@ -1,7 +1,9 @@
 " Fold Settings {{{
-  " vim: set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :
+  " vim:
+  " set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :
   " folding settings
- set foldmethod=indent "fold based on indent
+ "set foldmethod=indent "fold based on indent
+ set foldmethod=marker "fold based on indent
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=indent | endif
@@ -29,7 +31,7 @@ augroup END
 
 " DAS magic {{{
 " Map ,e and ,v to open files in same dir as current file.
-let mapleader=" "
+let mapleader = "\<Space>"
 " Map command-t plugin to my development directory
 " Recompiling command-t, may need to do if ruby version changes and the
 " version of ruby vim is compiled with changes. Must be the same...
@@ -37,12 +39,6 @@ let mapleader=" "
 " ruby extconf.rb
 " make clean
 " make
-map <leader>gd :CommandTFlush<cr>\|:CommandT ~/development<cr>
-map <leader>gt :CommandTFlush<cr>\|:CommandT ~/development/pcw-textservice-eclim<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT ~/development/hillebrand<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT ~/development/md5_repos/mmcommunity<cr>
-map <leader>gD :CommandTFlush<cr>\|:CommandT ~/development/md5_repos/md5<cr>
-map <leader>yy :.w !xsel -b<cr>
 " }}}
 
 " Settings {{{
@@ -96,18 +92,15 @@ set wrap
 " Allow backspace to delete end of line, indent and start of line characters
 set backspace=indent,eol,start
 
-" Convert tabs to spaces
-"set expandtab
-
 " switching to tabs instead of spaces OH WHITESPACE
 set tabstop=4
 set autoindent
-set noexpandtab
+set noexpandtab " tabs over spaces
 set shiftwidth=4
 set list
 
 " honor editorconfigs!
-let g:EditorConfig_core_mode = 'external_command'
+" let g:EditorConfig_core_mode = 'external_command'
 
 " show leading tabs
 set listchars=tab:>·,trail:- "
@@ -117,6 +110,12 @@ autocmd BufWinEnter * setl conceallevel=2 concealcursor=nv
 autocmd BufWinEnter * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
 autocmd BufReadPre * setl conceallevel=2 concealcursor=nv
 autocmd BufReadPre * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
+
+" For more normal cut and paste.
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
 
 " Turn on line numbers
 set number
@@ -147,8 +146,7 @@ set encoding=utf-8
 set autoread
 
 " Use system clipboard
-" http://stackoverflow.com/questions/8134647/copy-and-paste-in-vim-via-keyboard-between-different-mac-terminals
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Don't show intro
 set shortmess+=I
@@ -182,14 +180,15 @@ set colorcolumn=80
 " }}}
 
 "" CtrlP {{{
-map <leader>p <C-p>
+" leave it as C-p
+" <leader>p <C-p>
 map <leader>t :CtrlPMixed<cr>
-map <leader>y :CtrlPBuffer<cr>
-let g:ctrlp_show_hidden=1
-let g:ctrlp_working_path_mode='ra'
-let g:ctrlp_max_height=30
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
+map <leader>u :CtrlPBuffer<cr>
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_max_height = 30
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_depth = 40
 "
 " CtrlP -> override <C-o> to provide options for how to open files
 let g:ctrlp_arg_map = 1
@@ -238,10 +237,10 @@ let g:ctrlp_custom_ignore = '\v[\/]((node_modules|target|doc)|\.(git|svn|grunt|s
 "map <leader>' :NERDTreeToggle<cr>
 "
 "" Tabularize
-"map <Leader>e :Tabularize /=<cr>
-"map <Leader>c :Tabularize /:<cr>
-"map <Leader>es :Tabularize /=\zs<cr>
-"map <Leader>cs :Tabularize /:\zs<cr>
+"map <leader>e :Tabularize /=<cr>
+"map <leader>c :Tabularize /:<cr>
+"map <leader>es :Tabularize /=\zs<cr>
+"map <leader>cs :Tabularize /:\zs<cr>
 "
 "" Camel Case Motion (for dealing with programming code)
 "map <silent> w <Plug>CamelCaseMotion_w
@@ -299,26 +298,26 @@ map <leader>` <C-W>v
 "" See also <https://gist.github.com/8114940>
 "
 "" Run currently open RSpec test file
-"map <Leader>rf :w<cr>:!rspec % --format nested<cr>
+"map <leader>rf :w<cr>:!rspec % --format nested<cr>
 "
 "" Run current RSpec test
 "" RSpec is clever enough to work out the test to run if the cursor is on any line within the test
-"map <Leader>rl :w<cr>:exe "!rspec %" . ":" . line(".")<cr>
+"map <leader>rl :w<cr>:exe "!rspec %" . ":" . line(".")<cr>
 "
 "" Run all RSpec tests
-"map <Leader>rt :w<cr>:!rspec --format nested<cr>
+"map <leader>rt :w<cr>:!rspec --format nested<cr>
 "
 "" Run currently open cucumber feature file
-"map <Leader>cf :w<cr>:!cucumber %<cr>
+"map <leader>cf :w<cr>:!cucumber %<cr>
 "
 "" Run current cucumber scenario
-"map <Leader>cl :w<cr>:exe "!cucumber %" . ":" . line(".")<cr>
+"map <leader>cl :w<cr>:exe "!cucumber %" . ":" . line(".")<cr>
 "
 "" Run all cucumber feature files
-"map <Leader>ct :w<cr>:!cucumber<cr>
+"map <leader>ct :w<cr>:!cucumber<cr>
 "
 "" Tmux style window selection
-"map <Leader>ws :ChooseWin<cr>
+"map <leader>ws :ChooseWin<cr>
 "" }}}
 "
 " Commands {{{
@@ -388,6 +387,7 @@ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowTo
 "
 " Reset spelling colours when reading a new buffer
 " This works around an issue where the colorscheme is changed by .local.vimrc
+"
 fun! SetSpellingColors()
   highlight SpellBad cterm=bold ctermfg=white ctermbg=red
   highlight SpellCap cterm=bold ctermfg=red ctermbg=white
@@ -408,10 +408,6 @@ endfun
 autocmd FilterWritePre * call SetDiffColors()
 " }}}
 
-" POWERLINE {{{
-"set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim
-" }}}
-"
 " JavaScript Plugins {{{
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
@@ -428,21 +424,53 @@ fun! JumpToDef()
   endif
 endf
 
-" Jump to tag
-nn <M-g> :call JumpToDef()<cr>
-ino <M-g> <esc>:call JumpToDef()<cr>i
-map <leader>b :call JumpToDef()<cr>
-map <leader>B <esc>:call JumpToDef()<cr>i
+
+" clipboard fun {{{
+nnoremap <leader>y "+
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
 " }}}
 
-" Java EclimD plugins {{{
-nnoremap <silent> <buffer> <leader>jds :JavaDocSearch -x declarations<cr>
-nnoremap <silent> <buffer> <leader>ji :JavaImport<cr>
-noremap <silent> <buffer> <leader>jsc :JavaSearchContext<cr>
-"https://wiki.archlinux.org/index.php/Vim/YouCompleteMe
-"let g:EclimCompletionMethod = 'omnifunc'
+" ghost text start stop {{{
+" ghost text begin
+"map <leader>gts :GhostTextStart<cr>
+" ghost text end
+"map <leader>gte :GhostTextStop<cr>
 " }}}
+
+" show marks plugin enabled by default {{{
+" https://github.com/exvim/ex-showmarks
+" default keybindings
+" nnoremap <leader>mt :ShowMarksToggle<cr>
+"nnoremap <leader>mo :ShowMarksOn<cr>
+"nnoremap <leader>mh :ShowMarksClearMark<cr>
+"nnoremap <leader>ma :ShowMarksClearAll<cr>
+"nnoremap <leader>mm :ShowMarksPlaceMark<cr>
+let g:showmarks_enable = 1
+let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+" Ignore help, quickfix, non-modifiable buffers
+let showmarks_ignore_type = "hqm"
+
+" Hilight lower & upper marks
+let showmarks_hlline_lower = 1
+let showmarks_hlline_upper = 0
+" highlights 
+" For marks a-z
+hi clear ShowMarksHLl
+hi ShowMarksHLl term=bold cterm=none ctermbg=LightBlue gui=none guibg=LightBlue
+" For marks A-Z
+hi clear ShowMarksHLu
+hi ShowMarksHLu term=bold cterm=bold ctermbg=LightRed ctermfg=DarkRed gui=bold guibg=LightRed guifg=DarkRed
+" For all other marks
+hi clear ShowMarksHLo
+hi ShowMarksHLo term=bold cterm=bold ctermbg=LightYellow ctermfg=DarkYellow gui=bold guibg=LightYellow guifg=DarkYellow
+" For multiple marks on the same line.
+hi clear ShowMarksHLm
+hi ShowMarksHLm term=bold cterm=none ctermbg=LightBlue gui=none guibg=SlateBlue
+" }}"
+
 
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
 nnoremap <silent> <F12> :bn<CR>
-nnoremap <silent> <M-F12> :bp<CR>
+nnoremap <silent> <F11> :bp<CR>

@@ -24,6 +24,7 @@ Plugin 'tpope/vim-obsession'
 Plugin 'wincent/command-t'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-dispatch'
 Plugin 'mtth/scratch.vim'
 Plugin 'dbakker/vim-projectroot'
@@ -42,6 +43,7 @@ Plugin 'zah/nim.vim'
 Plugin 'luochen1990/rainbow'
 Plugin 'junegunn/goyo.vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'exvim/ex-showmarks'
 "Plugin 'paredit.vim'
 "Plugin 'flowtype/vim-flow'
 " AFTER ADDITION OF PLUGIN RUN -
@@ -250,8 +252,8 @@ endif " has("autocmd")
 " }}}
 
 " {{{ vimrc.local
-" if filereadable("~/.vimrc.local")
-source ~/.vimrc.local
-" endif
+if filereadable(glob("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
 " }}}
-set clipboard+=ideaput
+
