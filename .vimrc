@@ -3,8 +3,6 @@ scriptencoding utf-8
 "
 set t_Co=256
 
-colorscheme evening
-set background=dark
 "" Plugins {{{
 set nocompatible
 filetype plugin indent on

@@ -43,6 +43,7 @@ map <leader>gt :CommandTFlush<cr>\|:CommandT ~/development/pcw-textservice-eclim
 map <leader>gh :CommandTFlush<cr>\|:CommandT ~/development/hillebrand<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT ~/development/md5_repos/mmcommunity<cr>
 map <leader>gD :CommandTFlush<cr>\|:CommandT ~/development/md5_repos/md5<cr>
+map <leader>yy :.w !xsel -b<cr>
 
 " }}}
 
@@ -91,19 +92,24 @@ set ignorecase
 set hidden
 
 " Turn word wrap off
-set nowrap
+set wrap
+"set nowrap
 
 " Allow backspace to delete end of line, indent and start of line characters
 set backspace=indent,eol,start
 
 " Convert tabs to spaces
-set expandtab
+"set expandtab
 
 " Set tab size in spaces (this is for manual indenting)
-set tabstop=4
-set softtabstop=4
-
+"set tabstop=4
+"set softtabstop=4
 " The number of spaces inserted for a tab (used for auto indenting)
+
+" switching to tabs instead of spaces
+set autoindent
+set noexpandtab
+set tabstop=4
 set shiftwidth=4
 
 " Turn on line numbers
@@ -191,7 +197,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " CtrlP -> diretories to ignore when fuzzy finding
 " CtrlP -> directories to ignore when fuzzy finding
-let g:ctrlp_custom_ignore = '\v[\/]((node_modules)|\.(git|svn|grunt|sass-cache))$'
+let g:ctrlp_custom_ignore = '\v[\/]((node_modules|target|doc)|\.(git|svn|grunt|sass-cache))$'
 
 "" }}}
 
@@ -401,7 +407,7 @@ autocmd FilterWritePre * call SetDiffColors()
 " }}}
 
 " POWERLINE {{{
-set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim
+"set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim
 " }}}
 "
 " JavaScript Plugins {{{
@@ -412,12 +418,13 @@ imap <C-c> <CR><Esc>O
 " }}}
 
 " Java EclimD plugins {{{
-nnoremap <silent> <buffer> <leader>d :JavaDocSearch -x declarations<cr>
-nnoremap <silent> <buffer> <leader>i :JavaImport<cr>
-noremap <silent> <buffer> <cr> :JavaSearchContext<cr>
+nnoremap <silent> <buffer> <leader>jds :JavaDocSearch -x declarations<cr>
+nnoremap <silent> <buffer> <leader>ji :JavaImport<cr>
+noremap <silent> <buffer> <leader>jsc :JavaSearchContext<cr>
+"https://wiki.archlinux.org/index.php/Vim/YouCompleteMe
+"let g:EclimCompletionMethod = 'omnifunc'
 " }}}
 
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
 nnoremap <silent> <F12> :bn<CR>
 nnoremap <silent> <M-F12> :bp<CR>
-
