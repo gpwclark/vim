@@ -192,9 +192,9 @@ nmap <leader>rI :action OptimizeImports<cr>
 nmap <leader>rc :action InspectCode<cr>
 
 " g = go, go tool window, go declartion, go implementation
-nmap <leader>gt :action ActivateTODOToolWindow<cr>
-nmap <leader>gd :action GotoDeclaration<cr>
-nmap <leader>gi :action GotoImplementation<cr>
+nmap <leader>ct :action ActivateTODOToolWindow<cr>
+nmap <leader>cd :action GotoDeclaration<cr>
+nmap <leader>ci :action GotoImplementation<cr>
 
 " f = find
 nmap <leader>fu :action FindUsages<cr>
@@ -228,8 +228,8 @@ nmap <leader>td :action Debug<cr>
 nmap <leader>tr :action Run<cr>
 nmap <leader>ts :action RunDashboard.Stop<cr>
 
-" c = cursive
-nmap <leader>cl :cursive.repl.actions/load-file<cr>
+" g = cursive/clojure
+" nmap <leader>gl :cursive.repl.actions/load-file<cr>
 
 " }}}
 set clipboard+=ideaput
