@@ -5,6 +5,7 @@ set t_Co=256
 
 colorscheme evening
 set background=light
+
 "" Plugins {{{
 filetype off
 "set the runtime path to include Vundle and initialize
@@ -21,7 +22,8 @@ Plugin 'VundleVim/Vundle.vim'
 "  plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-capslock'
-
+Plugin 'tpope/vim-obsession'
+Plugin 'wincent/command-t'
 "" }}}
 "
 
