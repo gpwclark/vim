@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/price/development/pcw-textservice/src/main/java/org/pcweavers/textservice/mail'
-let g:netrw_dirhist_2='/home/price/apps/bfg/dash-hack.git.bfg-report'
-let g:netrw_dirhist_3='/home/price/development/clojure/pfchangsindex/resources'
-let g:netrw_dirhist_4='/home/price/dircolors-solarized'
-let g:netrw_dirhist_5='/home/price/development/clojure'
-let g:netrw_dirhist_6='/home/price/.config/i3'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/price/development/md5-slack/server'
+let g:netrw_dirhist_2='/home/price/development/gxm-notes'
+let g:netrw_dirhist_3='/home/price/development/md5_repos/auscommunity/client'
+let g:netrw_dirhist_4='/home/price/development/md5_repos/md5/packages/md5/lib/client/templates/squads'
+let g:netrw_dirhist_5='/home/price/development/md5_repos/auscommunity/client/dashboard'
+let g:netrw_dirhist_6='/home/price/development/gxm-notes'
+let g:netrw_dirhist_7='/home/price/development/md5_repos/auscommunity/client/admin'
+let g:netrw_dirhist_8='/home/price/development/md5_repos/auscommunity/.git'

@@ -8,7 +8,7 @@ set background=light
 
 "" Plugins {{{
 set nocompatible
-filetype off
+filetype plugin indent on
 "set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -27,12 +27,17 @@ Plugin 'tpope/vim-obsession'
 Plugin 'wincent/command-t'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-dispatch'
+Plugin 'mtth/scratch.vim'
+Plugin 'dbakker/vim-projectroot'
+Plugin 'LucHermitte/lh-vim-lib'
+Plugin 'LucHermitte/local_vimrc'
+Plugin 'dansomething/vim-eclim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 "" }}}
-"
 
 " Default configuration file for Vim
 " $Header: /var/cvsroot/gentoo-x86/app-editors/vim-core/files/vimrc-r4,v 1.3 2010/04/15 19:30:32 darkside Exp $
@@ -228,22 +233,3 @@ endif " has("autocmd")
 source ~/.vimrc.local
 " endif
 " }}}
-
-set autochdir
-set fileformats=unix,dos,mac
-set hidden
-set cursorcolumn
-set cursorline
-set laststatus=2
-set listchars=tab:>-,trail:- "
-set report=0
-set ruler
-set showcmd
-set showmatch
-set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-
-set expandtab
-set ignorecase
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
