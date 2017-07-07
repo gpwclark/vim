@@ -34,6 +34,7 @@ Plugin 'LucHermitte/lh-vim-lib'
 Plugin 'LucHermitte/local_vimrc'
 Plugin 'dansomething/vim-eclim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
