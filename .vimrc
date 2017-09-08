@@ -35,6 +35,10 @@ Plugin 'LucHermitte/local_vimrc'
 Plugin 'dansomething/vim-eclim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Raimondi/delimitMate'
+Plugin 'leshill/vim-json'
+Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'flowtype/vim-flow'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
