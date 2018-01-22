@@ -4,7 +4,7 @@ scriptencoding utf-8
 set t_Co=256
 
 colorscheme evening
-set background=light
+set background=dark
 
 "" Plugins {{{
 set nocompatible
@@ -38,7 +38,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'leshill/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'mileszs/ack.vim'
+Plugin 'bling/vim-airline'
+
 "Plugin 'flowtype/vim-flow'
+" AFTER ADDITION OF PLUGIN RUN -
+"   :source ~/.vimrc
+"   :PluginInstall
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
