@@ -38,6 +38,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'morhetz/gruvbox'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
+Plugin 'valloric/YouCompleteMe'
 
 "Plugin 'flowtype/vim-flow'
 " AFTER ADDITION OF PLUGIN RUN -
@@ -50,14 +51,18 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 "" }}}
 
+"for ideavim {{{
+set vim-surround
+"" }}}
+
 "" ColorScheme {{{
-colorscheme gruvbox
-set background=dark
-autocmd BufEnter * colorscheme gruvbox
-autocmd BufEnter *.sh colorscheme peachpuff
-autocmd BufEnter *.py colorscheme torte
-autocmd BufEnter *.js colorscheme koehler
-autocmd BufEnter *.java colorscheme desert
+set background=light
+colorscheme elflord
+"autocmd BufEnter * colorscheme gruvbox
+"autocmd BufEnter *.sh colorscheme peachpuff
+"autocmd BufEnter *.py colorscheme torte
+"autocmd BufEnter *.js colorscheme koehler
+"autocmd BufEnter *.java colorscheme desert
 "" }}}
 
 
