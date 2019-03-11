@@ -39,6 +39,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'zah/nim.vim'
 
 "Plugin 'flowtype/vim-flow'
 " AFTER ADDITION OF PLUGIN RUN -
@@ -49,10 +51,6 @@ Plugin 'valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-"" }}}
-
-"for ideavim {{{
-set vim-surround
 "" }}}
 
 "" ColorScheme {{{
