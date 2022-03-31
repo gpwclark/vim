@@ -1,7 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/price/development/md5_repos/md5/packages/md5'
-let g:netrw_dirhist_2='/home/price/development/md5_repos/mmcommunity/aws-test-settings'
-let g:netrw_dirhist_3='/home/price/development/md5_repos/mmcommunity/client/common'
-let g:netrw_dirhist_4='/home/price/.tmux'
-let g:netrw_dirhist_5='/home/price/development/md5_repos/mmcommunity'
+let g:netrw_dirhist_cnt =0
