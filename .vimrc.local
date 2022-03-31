@@ -168,31 +168,33 @@ set colorcolumn=80
 " }}}
 
 "" CtrlP {{{
-"map <leader>t <C-p>
-"map <leader>y :CtrlPBuffer<cr>
-"let g:ctrlp_show_hidden=1
-"let g:ctrlp_working_path_mode=0
-"let g:ctrlp_max_height=30
+map <leader>t <C-p>
+map <leader>y :CtrlPBuffer<cr>
+let g:ctrlp_show_hidden=1
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_max_height=30
 "
-"" CtrlP -> override <C-o> to provide options for how to open files
-"let g:ctrlp_arg_map = 1
-"
-"" CtrlP -> files matched are ignored when expanding wildcards
-"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*.,*/.DS_Store
-"
-"" CtrlP -> use Ag for searching instead of VimScript
-"" (might not work with ctrlp_show_hidden and ctrlp_custom_ignore)
-"let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-"
-"" CtrlP -> directories to ignore when fuzzy finding
-"let g:ctrlp_custom_ignore = '\v[\/]((node_modules)|\.(git|svn|grunt|sass-cache))$'
-"
+" CtrlP -> override <C-o> to provide options for how to open files
+let g:ctrlp_arg_map = 1
+
+" CtrlP -> files matched are ignored when expanding wildcards
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*.,*/.DS_Store
+
+" CtrlP -> use Ag for searching instead of VimScript
+" (might not work with ctrlp_show_hidden and ctrlp_custom_ignore)
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+" CtrlP -> directories to ignore when fuzzy finding
+let g:ctrlp_custom_ignore = '\v[\/]((node_modules)|\.(git|svn|grunt|sass-cache))$'
+
+"" }}}
+
 "" Ack (uses Ag behind the scenes)
 "let g:ackprg = 'ag --nogroup --nocolor --column'
 "
 "" Airline (status line)
 "let g:airline_powerline_fonts = 1
-"
+
 "" Gist authorisation settings
 "let g:github_user = $GITHUB_USER
 "let g:github_token = $GITHUB_TOKEN

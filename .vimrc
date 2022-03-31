@@ -7,6 +7,7 @@ colorscheme evening
 set background=light
 
 "" Plugins {{{
+set nocompatible
 filetype off
 "set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -24,6 +25,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-capslock'
 Plugin 'tpope/vim-obsession'
 Plugin 'wincent/command-t'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 "" }}}
 "
 
@@ -43,7 +50,6 @@ Plugin 'wincent/command-t'
 " The following are some sensible defaults for Vim for most users.
 " We attempt to change as little as possible from Vim's defaults,
 " deviating only where it makes sense
-set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " Allow backspacing over everything in insert mode
 set ai                  " Always set auto-indenting on
 set history=70          " keep 50 lines of command history
