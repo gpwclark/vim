@@ -3,9 +3,6 @@ scriptencoding utf-8
 "
 set t_Co=256
 
-colorscheme evening
-set background=light
-
 "" Plugins {{{
 set nocompatible
 filetype plugin indent on
@@ -38,12 +35,25 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'leshill/vim-json'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'morhetz/gruvbox'
 "Plugin 'flowtype/vim-flow'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 "" }}}
+
+"" ColorScheme {{{
+colorscheme gruvbox
+set background=dark
+autocmd BufEnter * colorscheme gruvbox
+autocmd BufEnter *.sh colorscheme peachpuff
+autocmd BufEnter *.py colorscheme torte
+autocmd BufEnter *.js colorscheme koehler
+autocmd BufEnter *.java colorscheme desert
+"" }}}
+
 
 " Default configuration file for Vim
 " $Header: /var/cvsroot/gentoo-x86/app-editors/vim-core/files/vimrc-r4,v 1.3 2010/04/15 19:30:32 darkside Exp $
