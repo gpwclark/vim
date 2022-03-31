@@ -1,16 +1,11 @@
-" custom settings {{{
-map <leader>p :pwd <cr>
-" }}}
-
 " Fold Settings {{{
   " vim: set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :
   " folding settings
-"  set foldmethod=indent "fold based on indent
+ set foldmethod=indent "fold based on indent
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
-  set foldmethod=marker
   set foldnestmax=10    "deepest fold is 10 lvls
   set nofoldenable      "dont fold by default
   set foldlevel=1       "my default for now
@@ -42,7 +37,7 @@ map <leader>v :view %%
 map <leader>et :tabe %%
 " Map command-t plugin to my development directory
 map <leader>gd :CommandTFlush<cr>\|:CommandT ~/development<cr>
-map <leader>gt :CommandTFlush<cr>\|:CommandT ~/development/pcw-textservice<cr>
+map <leader>gt :CommandTFlush<cr>\|:CommandT ~/development/pcw-textservice-eclim<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT ~/development/md5_repos<cr>
 
 " }}}
@@ -281,9 +276,9 @@ cmap w!! %!sudo tee > /dev/null %
 "" Same with mapping <C-W>|
 "
 "" Make splitting Vim windows easier
-"map <leader>; <C-W>s
-"map <leader>` <C-W>v
-"
+map <leader>; <C-W>s
+map <leader>` <C-W>v
+
 "" Running Tests...
 "" See also <https://gist.github.com/8114940>
 "
@@ -403,6 +398,11 @@ autocmd FilterWritePre * call SetDiffColors()
 
 " POWERLINE {{{
 set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim
+" }}}
+"
+" JavaScript Plugins {{{
+" let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
 " }}}
 
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.

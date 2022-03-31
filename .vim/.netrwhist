@@ -1,10 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/price/development/md5-slack/server'
-let g:netrw_dirhist_2='/home/price/development/gxm-notes'
-let g:netrw_dirhist_3='/home/price/development/md5_repos/auscommunity/client'
-let g:netrw_dirhist_4='/home/price/development/md5_repos/md5/packages/md5/lib/client/templates/squads'
-let g:netrw_dirhist_5='/home/price/development/md5_repos/auscommunity/client/dashboard'
-let g:netrw_dirhist_6='/home/price/development/gxm-notes'
-let g:netrw_dirhist_7='/home/price/development/md5_repos/auscommunity/client/admin'
-let g:netrw_dirhist_8='/home/price/development/md5_repos/auscommunity/.git'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/price/development/md5_repos/mongo_wizardry'
+let g:netrw_dirhist_2='/home/price/.zsh-syntax-highlighting'
+let g:netrw_dirhist_3='/home/price/.zsh-syntax-highlighting/docs/highlighters'
+let g:netrw_dirhist_4='/home/price/Downloads'
+let g:netrw_dirhist_5='/home/price/development/md5_repos/mmcommunity/public/images/mm/icons'
+let g:netrw_dirhist_6='/home/price/development/pcw-textservice-eclim/target/surefire-reports'
