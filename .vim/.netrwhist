@@ -1,3 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/price/development/pcw-textservice/src/main/java/org/pcweavers/textservice/mail'
+let g:netrw_dirhist_2='/home/price/apps/bfg/dash-hack.git.bfg-report'
+let g:netrw_dirhist_3='/home/price/development/clojure/pfchangsindex/resources'
+let g:netrw_dirhist_4='/home/price/dircolors-solarized'
+let g:netrw_dirhist_5='/home/price/development/clojure'
