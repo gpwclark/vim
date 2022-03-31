@@ -28,15 +28,19 @@ augroup END
   set ignorecase
   set smartcase
 " }}}
-"
-"" Map ,e and ,v to open files in same dir as current file.
-"cnoremap %% <C-R>=expand('%:h').'/'<cr>
-"map <leader>e :edit %%
-"map <leader>v :view %%
-"map <leader>et :tabe %%
-"" Map command-t plugin to my development directory
-"map <leader>gd :CommandTFlush<cr>\|:CommandT ~/development<cr>
-"
+
+" DAS magic {{{
+" Map ,e and ,v to open files in same dir as current file.
+let mapleader=","
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+map <leader>et :tabe %%
+" Map command-t plugin to my development directory
+map <leader>gd :CommandTFlush<cr>\|:CommandT ~/development<cr>
+map <leader>gt :CommandTFlush<cr>\|:CommandT ~/development/pcw-textservice<cr>
+
+" }}}
 
 " Settings {{{
 " Switch syntax highlighting on, when the terminal has colors
@@ -83,7 +87,7 @@ set ignorecase
 set hidden
 
 " Turn word wrap off
-" set nowrap
+set nowrap
 
 " Allow backspace to delete end of line, indent and start of line characters
 set backspace=indent,eol,start
@@ -391,7 +395,6 @@ set rtp+=/usr/lib/python3.5/site-packages/powerline/bindings/vim
 " }}}
 
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
-nnoremap <silent> <M-F12> :BufExplorer<CR>
 nnoremap <silent> <F12> :bn<CR>
-nnoremap <silent> <S-F12> :bp<CR>
+nnoremap <silent> <M-F12> :bp<CR>
 
