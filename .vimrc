@@ -3,61 +3,61 @@ scriptencoding utf-8
 "
 set t_Co=256
 
-"" Plugins {{{
-set nocompatible
-filetype off " required
-"set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-"  plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-capslock'
-Plugin 'tpope/vim-obsession'
-Plugin 'wincent/command-t'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-dispatch'
-Plugin 'mtth/scratch.vim'
-Plugin 'dbakker/vim-projectroot'
-Plugin 'LucHermitte/lh-vim-lib'
-Plugin 'LucHermitte/local_vimrc'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Raimondi/delimitMate'
-Plugin 'leshill/vim-json'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'morhetz/gruvbox'
-Plugin 'mileszs/ack.vim'
-Plugin 'bling/vim-airline'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'zah/nim.vim'
-Plugin 'luochen1990/rainbow'
-Plugin 'junegunn/goyo.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'exvim/ex-showmarks'
-"Plugin 'paredit.vim'
-"Plugin 'flowtype/vim-flow'
-" AFTER ADDITION OF PLUGIN RUN -
-"   :source ~/.vimrc
-"   :PluginInstall
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-"" }}}
+"   " Plugins {{{
+"   set nocompatible
+"   filetype off " required
+"   "set the runtime path to include Vundle and initialize
+"   set rtp+=~/.vim/bundle/Vundle.vim
+"   call vundle#begin()
+"   " alternatively, pass a path where Vundle should install plugins
+"   "call vundle#begin('~/some/path/here')
+"   
+"   " let Vundle manage Vundle, required
+"   Plugin 'VundleVim/Vundle.vim'
+"   
+"   " The following are examples of different formats supported.
+"   " Keep Plugin commands between vundle#begin/end.
+"   "  plugin on GitHub repo
+"   Plugin 'tpope/vim-fugitive'
+"   Plugin 'tpope/vim-capslock'
+"   Plugin 'tpope/vim-obsession'
+"   Plugin 'wincent/command-t'
+"   Plugin 'ctrlpvim/ctrlp.vim'
+"   Plugin 'tpope/vim-surround'
+"   Plugin 'fatih/vim-go'
+"   Plugin 'tpope/vim-dispatch'
+"   Plugin 'mtth/scratch.vim'
+"   Plugin 'dbakker/vim-projectroot'
+"   Plugin 'LucHermitte/lh-vim-lib'
+"   Plugin 'LucHermitte/local_vimrc'
+"   Plugin 'pangloss/vim-javascript'
+"   Plugin 'scrooloose/nerdtree'
+"   Plugin 'Raimondi/delimitMate'
+"   Plugin 'leshill/vim-json'
+"   Plugin 'christoomey/vim-tmux-navigator'
+"   Plugin 'morhetz/gruvbox'
+"   Plugin 'mileszs/ack.vim'
+"   Plugin 'bling/vim-airline'
+"   Plugin 'vim-syntastic/syntastic'
+"   Plugin 'zah/nim.vim'
+"   Plugin 'luochen1990/rainbow'
+"   Plugin 'junegunn/goyo.vim'
+"   Plugin 'editorconfig/editorconfig-vim'
+"   Plugin 'exvim/ex-showmarks'
+"   "Plugin 'paredit.vim'
+"   "Plugin 'flowtype/vim-flow'
+"   " AFTER ADDITION OF PLUGIN RUN -
+"   "   :source ~/.vimrc
+"   "   :PluginInstall
+"
+"
+"   " All of your Plugins must be added before the following line
+"   call vundle#end()            " required
+"   filetype plugin indent on    " required
+"   "" }}}
 
 "" ColorScheme {{{
-colorscheme elflord
+colorscheme desert
 set background=dark
 "" }}}
 
