@@ -185,6 +185,7 @@ imap <C-c> <CR><Esc>O
 
 " intellij specific vim bindings {{{
 " Refactorings
+" https://github.com/JetBrains/ideavim#finding-action-ids
 vmap T :action Refactorings.QuickListPopupAction<cr>
 nmap <leader>rr :action RenameElement<cr>
 nmap <leader>rI :action OptimizeImports<cr>
@@ -204,8 +205,10 @@ nmap <leader>en :action GotoNextError<cr>
 nmap <leader>ep :action GotoPreviousError<cr>
 
 " d = doc
-nmap <leader>dq :action GuiDesigner.QuickJavadoc<cr>
-nmap <leader>de :action ExternalJavaDoc<cr>
+nmap <leader>dq :action Terminal.ShowDocumentation<cr>
+nmap <leader>de :action Documentation.ViewExterna<cr>
+:map <leader>dqq <Action>(Terminal.ShowDocumentation)
+:map <leader>dee <Action>(Documentation.ViewExterna)
 
 " h = hierarchy
 nmap <leader>ht :action TypeHierarchy<cr>
@@ -227,6 +230,7 @@ nmap <leader>ws :action MoveEditorToOppositeTabGroup<cr>
 nmap <leader>td :action Debug<cr>
 nmap <leader>tr :action Run<cr>
 nmap <leader>ts :action RunDashboard.Stop<cr>
+nmap <leader>tc :action RunConfigurationAsAction_Run_Check_default_target<cr>
 
 " g = cursive/clojure
 " nmap <leader>gl :cursive.repl.actions/load-file<cr>
