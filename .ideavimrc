@@ -237,3 +237,4 @@ nmap <leader>tc :action RunConfigurationAsAction_Run_Check_default_target<cr>
 
 " }}}
 set clipboard+=ideaput
+set ideajoin
