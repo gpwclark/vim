@@ -97,14 +97,14 @@ set list
 " honor editorconfigs!
 let g:EditorConfig_core_mode = 'external_command'
 
-" show leading tabs
-set listchars=tab:>·,trail:- "
-" show leading spaces
-hi Conceal guibg=NONE ctermbg=NONE ctermfg=DarkGrey
-autocmd BufWinEnter * setl conceallevel=2 concealcursor=nv
-autocmd BufWinEnter * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
-autocmd BufReadPre * setl conceallevel=2 concealcursor=nv
-autocmd BufReadPre * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
+" " show leading tabs
+" set listchars=tab:>·,trail:- "
+" " show leading spaces
+" hi Conceal guibg=NONE ctermbg=NONE ctermfg=DarkGrey
+" autocmd BufWinEnter * setl conceallevel=2 concealcursor=nv
+" autocmd BufWinEnter * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
+" autocmd BufReadPre * setl conceallevel=2 concealcursor=nv
+" autocmd BufReadPre * syn match LeadingSpace /\(^ *\)\@<= / containedin=ALL conceal cchar=·
 
 " Turn on line numbers
 set number
@@ -124,7 +124,7 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 set laststatus=2
 
 " Set the status line to something useful
-set statusline=%f\ %=L:%l/%L\ %c\ (%p%%)
+"set statusline=%f\ %=L:%l/%L\ %c\ (%p%%)
 
 " Hide the toolbar
 set guioptions-=T
@@ -206,9 +206,25 @@ nmap <leader>ep :action GotoPreviousError<cr>
 
 " d = doc
 nmap <leader>dq :action Terminal.ShowDocumentation<cr>
-nmap <leader>de :action Documentation.ViewExterna<cr>
-:map <leader>dqq <Action>(Terminal.ShowDocumentation)
-:map <leader>dee <Action>(Documentation.ViewExterna)
+nmap <leader>de :action Documentation.ViewExternal<cr>
+nmap <leader>da :action Activatedocumentation.v2ToolWindow<cr>
+nmap <leader>d  :action<cr>
+"map <leader>dqq <Action>(Terminal.ShowDocumentation)
+"map <leader>dee <Action>(Documentation.ViewExternal)
+"Activatedocumentation.v2ToolWindow
+"Documentation.Back                                 <A-C-Left> button=4 clickCount=1 modifiers=0
+"Documentation.EditSource                           <F4>
+"Documentation.Forward                              <A-C-Right> button=5 clickCount=1 modifiers=0
+"Documentation.KeepTab
+"Documentation.Navigation
+"Documentation.PrimaryGroup
+"Documentation.ToggleAutoShow
+"Documentation.ToggleAutoUpdate
+"Documentation.ToggleShowInPopup
+"Documentation.ViewExternal                         <S-F1>
+"Terminal.ShowDocumentation                         <C-Q> button=2 clickCount=1 modifiers=512
+"WelcomeScreen.Documentation
+"WelcomeScreen.Documentation.IDEA
 
 " h = hierarchy
 nmap <leader>ht :action TypeHierarchy<cr>
@@ -237,4 +253,8 @@ nmap <leader>tc :action RunConfigurationAsAction_Run_Check_default_target<cr>
 
 " }}}
 set clipboard+=ideaput
+
 set ideajoin
+
+" Use ctrl-\ as an ide shortcut in normal and visual modes
+"sethandler <C-\> i-x:ide n:vim
