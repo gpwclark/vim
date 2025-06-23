@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/price/development/terel/know/.flox'
 let g:netrw_dirhist_4='/home/price/development/terel/know/fds/src/ref_impl'
 let g:netrw_dirhist_3='/home/price/development/terel/know/know-book/book'
 let g:netrw_dirhist_2='/home/price/development/terel/FireDBG.for.Rust/indexer'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/home/price/development/st/.idea'
 let g:netrw_dirhist_8='/home/price/development/terel/know/texts/src/stuff.rs'
 let g:netrw_dirhist_7='/home/price/development/terel/know/gui'
 let g:netrw_dirhist_6='/home/price/.local/share/xorg'
-let g:netrw_dirhist_5='/etc/portage/package.mask'
