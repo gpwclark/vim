@@ -478,6 +478,21 @@ hi ShowMarksHLm term=bold cterm=none ctermbg=LightBlue gui=none guibg=SlateBlue
 " }}"
 
 
+" Set up parinfer
+" {{{
+" Enable parinfer-rust
+let g:parinfer_enabled = 1
+
+" Optional: Set the mode (smart, indent, or paren)
+let g:parinfer_mode = 'smart'
+
+" Optional: Configure file types where parinfer should be active
+let g:parinfer_filetypes = ['slosh', 'clojure', 'scheme', 'lisp', 'racket', 'hy', 'fennel', 'janet', 'carp', 'wast', 'yuck']
+
+" Optional: Disable parinfer for certain buffers
+let g:parinfer_disable_filetypes = ['vim']
+" }}}
+
 " Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
 nnoremap <silent> <F12> :bn<CR>
 nnoremap <silent> <F11> :bp<CR>
