@@ -452,7 +452,7 @@ nnoremap <leader>P "+P
 "nnoremap <leader>ma :ShowMarksClearAll<cr>
 "nnoremap <leader>mm :ShowMarksPlaceMark<cr>
 " "strip whitespace
-nnoremap <leader>sw :%s/\s\+$//e<cr>
+nnoremap <leader>ws :%s/\s\+$//e<cr>
 let g:showmarks_enable = 1
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
