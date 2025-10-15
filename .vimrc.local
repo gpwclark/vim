@@ -345,7 +345,8 @@ autocmd Filetype markdown setlocal wrap linebreak nolist textwidth=0 wrapmargin=
 " specify syntax highlighting for specific files
 autocmd Bufread,BufNewFile *.spv set filetype=php
 autocmd Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula2' otherwise, see :set filetype?
-autocmd Bufread,BufNewFile *.slosh set filetype=slosh
+"autocmd Bufread,BufNewFile *.slosh set filetype=slosh
+au BufRead,BufNewFile *.mine		set filetype=mine
 
 " Highlight words to avoid in tech writing
 " http://css-tricks.com/words-avoid-educational-writing/
@@ -453,6 +454,8 @@ nnoremap <leader>P "+P
 "nnoremap <leader>mm :ShowMarksPlaceMark<cr>
 " "strip whitespace
 nnoremap <leader>ws :%s/\s\+$//e<cr>
+nnoremap <leader>sw :%s/\s\+$//e<cr>
+nnoremap <leader>wc :s/\([A-Z]\)/_\L\1/g<cr>
 let g:showmarks_enable = 1
 let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
