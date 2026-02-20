@@ -78,8 +78,8 @@ set ignorecase
 set hidden
 
 " Turn word wrap off
-set wrap
-"set nowrap
+"set wrap
+set nowrap
 
 " Allow backspace to delete end of line, indent and start of line characters
 set backspace=indent,eol,start
